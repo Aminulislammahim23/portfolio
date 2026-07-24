@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Mahim</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+            <h1>Hello, I'm <span>Mahim</span></h1>
+
+            <h2>Computer Science Student</h2>
+
+            <p>
+                Passionate about Web Development,
+                Android Development and Programming.
+            </p>
+
+            <button onclick="scrollToSection('contact')">
+                Hire Me
+            </button>
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a CSE student who enjoys creating websites,
+            mobile apps and solving programming problems.
+        </p>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skill-box">
+
+            <div class="card">HTML</div>
+            <div class="card">CSS</div>
+            <div class="card">JavaScript</div>
+            <div class="card">C++</div>
+            <div class="card">Java</div>
+            <div class="card">Python</div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+                <h3>Student Management System</h3>
+                <p>Built using HTML CSS JS.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Weather App</h3>
+                <p>Simple Weather Application.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Responsive Portfolio Design.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+
+            <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+            <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+            <textarea
+            placeholder="Your Message"
+            required></textarea>
+
+            <button type="submit">
+                Send
+            </button>
+
+        </form>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 Mahim. All Rights Reserved.</p>
+
+    </footer>
+
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>
