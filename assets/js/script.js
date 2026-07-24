@@ -35,3 +35,7 @@ section.classList.add("show");
 });
 
 });
+
+function sendEmail(){
+    window.location.href = "mailto:aminulislammahim2013@gmail.com"
+}
