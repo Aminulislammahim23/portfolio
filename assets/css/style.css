@@ -82,13 +82,23 @@
         }
 
         .nav-social {
-            display: flex;
-            gap: 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .nav-social button{
-            border-radius: 100px;
+        .linkedIn-btn{
             border: none;
+            margin-right: 10px;
+            cursor: pointer;
+             transition: all 0.2s ease;
+        }
+
+        .github-btn{
+            border: none;
+            margin-left: 30px;
+            cursor: pointer;
+             transition: all 0.2s ease;
         }
 
         .nav-social button:hover {
