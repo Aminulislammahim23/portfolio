@@ -3,151 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧑‍💻 Mahim</title>
+    <title>Aminul Islam Mahim • Software Engineer</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
     <!-- Navbar -->
-    <nav>
-        <div class="logo">Aminul Islam Mahim</div>
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <div class="logo-circle">AIM</div>
+                <span style="font-weight: 700; font-size: 16px;">Aminul Islam Mahim</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">Resume</a>
+                <button onclick="showContactModal()" class="btn btn-primary">Get in touch</button>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="btn btn-outline" style="padding: 10px 14px; display: none;" id="mobile-btn">
+                    ☰
+                </button>
+            </div>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+            <div class="nav-social">
+                <button type="button" onclick="window.location.href='https://github.com/Aminulislammahim23'" class="github-btn">
+                    <img src="./assets/image/GitHub_Invertocat_Black.svg" alt="Home" width="40" height="40">
+                </button>
+
+                <button type="button" onclick="window.location.href='https://www.linkedin.com/in/aminul-islam-mahim23/'" class="linkedIn-btn">
+                    <img src="./assets/image/LinkedIn.png" alt="Home" width="40" height="40">
+                </button>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero -->
-    <section id="home" class="hero">
-
-        <div class="hero-text">
-            <h1>Hello, I'm <span>Mahim</span></h1>
-
-            <h2>Software Engineer</h2>
-
-            <p>
-                Passionate about Web Development,
-                Android Development and Programming.
-            </p>
-
-            <button onclick="sendEmail()">
-                Say Hi!
-            </button>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div style="display: inline-flex; align-items: center; background: #dcfce7; color: #166534; padding: 6px 16px; border-radius: 9999px; font-size: 14px; margin-bottom: 20px;">
+                        <span style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 8px;"></span>
+                        Open to new opportunities
+                    </div>
+                    
+                    <h1>Hi, I'm <span class="gradient">Aminul Islam Mahim</span>.</h1>
+                    
+                    <p>Software Engineer specializing in scalable backend systems and delightful frontend experiences.</p>
+                    
+                    <div class="hero-buttons">
+                        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})" class="btn btn-primary">
+                            View projects
+                        </button>
+                        <button onclick="showContactModal()" class="btn btn-outline">
+                            Let's talk
+                        </button>
+                    </div>
+                    
+                    <div style="margin-top: 40px; display: flex; gap: 20px; align-items: center;">
+                        <div style="display: flex; gap: 16px;">
+                            <a href="#" style="color: #6b7280; text-decoration: none; font-size: 22px;">🐙</a>
+                            <a href="#" style="color: #6b7280; text-decoration: none; font-size: 22px;">💼</a>
+                            <a href="#" style="color: #6b7280; text-decoration: none; font-size: 22px;">🐦</a>
+                        </div>
+                        <span style="color: #6b7280; font-size: 15px;">Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="./assets/image/mahimislam.jpg" alt="Aminul Islam Mahim">
+                    <div style="position: absolute; bottom: -16px; right: -16px; background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                        <div style="font-size: 14px; color: #6b7280;">Currently at</div>
+                        <div style="font-weight: 700;">LOGIC Software LTD • Backend</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </section>
 
     <!-- About -->
-
-    <section id="about">
-
-        <h2><span>/</span> About Me</h2>
-
-        <p>
-            I am a CSE student who enjoys creating websites,
-            mobile apps and solving programming problems.
-        </p>
-
+    <section id="about" class="section container">
+        <div style="max-width: 720px;">
+            <span class="label">ABOUT ME</span>
+            <h2 class="section-header" style="font-size: 44px;">Building reliable systems at scale.</h2>
+            
+            <p style="font-size: 18px; color: #4b5563; margin-top: 24px;">
+                I'm a software engineer with 4+ years of experience designing and building high-performance, scalable systems. 
+                I love working at the intersection of infrastructure, APIs, and clean frontend interfaces.
+            </p>
+            <p style="font-size: 18px; color: #4b5563; margin-top: 16px;">
+                I've worked at early-stage startups and large tech companies including Vercel and Stripe. 
+                My focus is on creating reliable, maintainable, and observable systems.
+            </p>
+            
+            <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="background: white; border: 1px solid #e5e7eb; padding: 10px 20px; border-radius: 9999px; font-size: 14px;">
+                    📍 Dhaka, Bangladesh
+                </div>
+                <div style="background: white; border: 1px solid #e5e7eb; padding: 10px 20px; border-radius: 9999px; font-size: 14px;">
+                    🎓 Americal International University - Bangladesh, BSc CSE
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Skills -->
-
-    <section id="skills">
-
-        <h2><span>/</span> Skills</h2>
-
-        <div class="skill-box">
-
-            <div class="card">HTML</div>
-            <div class="card">CSS</div>
-            <div class="card">JavaScript</div>
-            <div class="card">C++</div>
-            <div class="card">Java</div>
-            <div class="card">Python</div>
-
+    <!-- Experience -->
+    <section id="experience" class="section" style="background: white; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
+        <div class="container">
+            <span class="label">EXPERIENCE</span>
+            <h2 class="section-header" style="font-size: 44px;">Where I've worked</h2>
+            
+            <div class="experience-item" style="margin-top: 48px;">
+                <div>
+                    <div style="font-weight: 700; font-size: 18px;">Logic Software LTD.</div>
+                    <div class="experience-date">May 2026 — Present</div>
+                </div>
+                <div>
+                    <div class="experience-role">Junior Software Engineer</div>
+                    <div class="experience-company">Backend Development</div>
+                    <ul style="margin-top: 16px; color: #4b5563; line-height: 1.8;">
+                        <li>ASP.NET</li>
+                        <li>Build Restful API </li>
+                        <li>Follow clean architecture for high efficiency</li>
+                        <li>Reduced incident MTTR by 47%</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div>
+                    <div style="font-weight: 700; font-size: 18px;">Vercel</div>
+                    <div class="experience-date">Mar 2021 — Dec 2022</div>
+                </div>
+                <div>
+                    <div class="experience-role">Software Engineer, Platform</div>
+                    <div class="experience-company">Edge Runtime</div>
+                    <ul style="margin-top: 16px; color: #4b5563; line-height: 1.8;">
+                        <li>Developed Edge Functions V8 runtime</li>
+                        <li>Shipped Analytics v3 dashboard</li>
+                    </ul>
+                </div>
+            </div>
+            
         </div>
-
-    </section>
-
-
-    <!-- Experiences -->
-
-    <section id="experiences">
-        <h2><span>/</span> Experiences</h2>
-        <div>
-
-        </div>
-
     </section>
 
     <!-- Projects -->
-
-    <section id="projects">
-
-        <h2><span>/</span> Projects</h2>
-
-        <div class="projects">
-
+    <section id="projects" class="section container">
+        <span class="label">SELECTED WORK</span>
+        <h2 class="section-header" style="font-size: 44px;">Featured projects</h2>
+        
+        <div class="projects-grid" style="margin-top: 40px;">
+            <!-- Project 1 -->
             <div class="project-card">
-                <h3>Student Management System</h3>
-                <p>Built using HTML CSS JS.</p>
+                <div class="project-header">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 12px;">⚙️</div>
+                        <div style="font-size: 22px; font-weight: 700;">TechKhor</div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Rebuilt Stripe's core payment processing engine in Go with gRPC. Reduced latency by 65%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
             </div>
-
+            
+            <!-- Project 2 -->
             <div class="project-card">
-                <h3>Weather App</h3>
-                <p>Simple Weather Application.</p>
+                <div class="project-header green">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 12px;">🌐</div>
+                        <div style="font-size: 22px; font-weight: 700;">Xtreme Moto</div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Designed and shipped the V8-based edge runtime powering Vercel's Edge Functions.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Rust</span>
+                        <span class="tech-tag">WebAssembly</span>
+                        <span class="tech-tag">V8</span>
+                    </div>
+                </div>
             </div>
-
+            
+            <!-- Project 3 -->
             <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>Responsive Portfolio Design.</p>
+                <div class="project-header orange">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 12px;">📊</div>
+                        <div style="font-size: 22px; font-weight: 700;">CodeCraft</div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Built a company-wide observability platform using OpenTelemetry and ClickHouse.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">PHP</span>
+                    </div>
+                </div>
             </div>
-
         </div>
+    </section>
 
+    <!-- Skills -->
+    <section id="skills" class="section container">
+        <span class="label">TECHNICAL SKILLS</span>
+        <h2 class="section-header" style="font-size: 44px;">What I work with</h2>
+        
+        <div class="skills-grid" style="margin-top: 48px;">
+            <div class="skill-card">
+                <h4>🧠 Languages</h4>
+                <div class="skill-list">
+                    <span class="skill-item">C/C++</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C#</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">JavaScript</span>
+                </div>
+            </div>
+            
+            <div class="skill-card">
+                <h4>🛠️ Frameworks &amp; Tools</h4>
+                <div class="skill-list">
+                    <span class="skill-item">Next.js</span>
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">ASP.NET</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">MSSQL</span>
+                    <span class="skill-item">XAMPP</span>
+                </div>
+            </div>
+            
+            <div class="skill-card">
+                <h4>☁️ Infrastructure</h4>
+                <div class="skill-list">
+                    <span class="skill-item">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact -->
-
-    <section id="contact">
-
-        <h2><span>/</span> Contact Me</h2>
-
-        <form id="contactForm">
-
-            <input
-            type="text"
-            placeholder="Your Name"
-            required>
-
-            <input
-            type="email"
-            placeholder="Your Email"
-            required>
-
-            <textarea
-            placeholder="Your Message"
-            required></textarea>
-
-            <button type="submit">
-                Send
-            </button>
-
-        </form>
-
+    <section id="contact" class="section container contact-section">
+        <span class="label">LET'S CONNECT</span>
+        <h2 class="section-header" style="font-size: 44px; display: inline-block;">Ready to build together?</h2>
+        
+        <p style="max-width: 520px; margin: 20px auto; font-size: 18px; color: #4b5563;">
+            I'm always open to new opportunities, interesting problems, and great conversations.
+        </p>
+        
+        <button onclick="showContactModal()" class="btn btn-primary" style="margin-top: 32px; padding: 16px 42px; font-size: 17px;">
+            Send a message
+        </button>
+        
+        <div style="margin-top: 32px; color: #6b7280;">
+            Or email me at <a href="mailto:aminulislammahim2013@gmail.com" style="color: #374151; font-weight: 600;">aminulislammahim2013@gmail.com</a>
+        </div>
     </section>
 
-    <footer>
-
-        <p>© 2026 Mahim. All Rights Reserved.</p>
-
+    <!-- Footer -->
+    <footer style="border-top: 1px solid #e5e7eb; padding: 40px 0; text-align: center; color: #6b7280; font-size: 14px;">
+        <div class="container">
+            © 2026 Aminul Islam Mahim. All rights reserved.
+            <div style="margin-top: 12px; display: flex; justify-content: center; gap: 24px;">
+                <a href="https://github.com/Aminulislammahim23" style="color: #6b7280; text-decoration: none;">GitHub</a>
+                <a href="https://www.linkedin.com/in/aminul-islam-mahim23/" style="color: #6b7280; text-decoration: none;">LinkedIn</a>
+                <a href="https://x.com/mahimislam512" style="color: #6b7280; text-decoration: none;">Twitter</a>
+            </div>
+        </div>
     </footer>
 
-<script src="./assets/js/script.js"></script>
-
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
