@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aminul Islam Mahim — Software Engineer specializing in scalable backend systems and delightful frontend experiences.">
     <title>Aminul Islam Mahim • Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Navbar -->
     <nav id="navbar">
         <div class="container nav-content">
-            <div class="logo">
-                <div class="logo-circle">AIM</div>
-                <span style="font-weight: 700; font-size: 16px;">Aminul Islam Mahim</span>
-            </div>
-            
-            <div class="nav-links">
+            <a href="#top" class="logo">
+                <span class="logo-name">Aminul Islam Mahim</span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
@@ -23,210 +30,215 @@
                 <a href="#contact">Contact</a>
             </div>
 
-            <div class="nav-social">
-                <button type="button" onclick="window.location.href='https://github.com/Aminulislammahim23'" class="github-btn">
-                    <img src="./assets/image/GitHub_Invertocat_Black.svg" alt="Home" width="40" height="40">
-                </button>
-
-                <button type="button" onclick="window.location.href='https://www.linkedin.com/in/aminul-islam-mahim23/'" class="linkedIn-btn">
-                    <img src="./assets/image/LinkedIn.png" alt="Home" width="40" height="40">
-                </button>
-            </div>
-
             <div class="nav-actions">
-                <a href="#" class="btn btn-outline">Resume</a>
-                <button onclick="showContactModal()" class="btn btn-primary">Get in touch</button>
-                
-                <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="btn btn-outline" style="padding: 10px 14px; margin-left: 30px; display: none;" id="mobile-btn">
-                    ☰
-                </button>
+                <a href="https://github.com/Aminulislammahim23" class="icon-btn" aria-label="GitHub" target="_blank" rel="noopener">
+                    <img src="./assets/image/GitHub_Invertocat_Black.svg" alt="" class="invert">
+                </a>
+                <a href="https://www.linkedin.com/in/aminul-islam-mahim23/" class="icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <img src="./assets/image/LinkedIn.png" alt="">
+                </a>
+                <a href="./assets/files/resume.html" class="btn btn-outline nav-resume">Resume</a>
+                <button onclick="showContactModal()" class="btn btn-primary nav-cta">Get in touch</button>
+                <button onclick="toggleMobileMenu()" class="icon-btn" id="mobile-btn" aria-label="Menu">☰</button>
             </div>
         </div>
     </nav>
 
+    <main id="top">
     <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text">
-                    <div style="display: inline-flex; align-items: center; background: #dcfce7; color: #166534; padding: 6px 16px; border-radius: 9999px; font-size: 14px; margin-bottom: 20px;">
-                        <span style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 8px;"></span>
-                        Open to new opportunities
+                    <div class="status-pill reveal">
+                        <span class="dot"></span> Open to new opportunities
                     </div>
-                    
-                    <h1>Hi, I'm <span class="gradient">Aminul Islam Mahim</span>.</h1>
-                    
-                    <p>Software Engineer specializing in scalable backend systems and delightful frontend experiences.</p>
-                    
-                    <div class="hero-buttons">
-                        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})" class="btn btn-primary">
-                            View projects
-                        </button>
-                        <button onclick="showContactModal()" class="btn btn-outline">
-                            Let's talk
-                        </button>
+
+                    <h1 class="reveal">Hi, I'm <span class="gradient">Aminul Islam Mahim</span>.</h1>
+
+                    <p class="hero-role reveal">I build <span id="typed" class="typed"></span><span class="caret"></span></p>
+
+                    <p class="hero-sub reveal">Software Engineer specializing in scalable backend systems and delightful frontend experiences.</p>
+
+                    <div class="hero-buttons reveal">
+                        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})" class="btn btn-primary">View projects</button>
+                        <button onclick="showContactModal()" class="btn btn-outline">Let's talk</button>
                     </div>
-                    
-                    <div style="margin-top: 40px; display: flex; gap: 20px; align-items: center;">
-                        <div style="display: flex; gap: 16px;">
-                            <a href="#" style="color: #6b7280; text-decoration: none; font-size: 22px;">🐙</a>
-                            <a href="#" style="color: #6b7280; text-decoration: none; font-size: 22px;">💼</a>
-                            <a href="#" style="color: #6b7280; text-decoration: none; font-size: 22px;">🐦</a>
-                        </div>
-                        <span style="color: #6b7280; font-size: 15px;">Dhaka, Bangladesh</span>
+
+                    <div class="hero-meta reveal">
+                        <span>📍 Dhaka, Bangladesh</span>
+                        <span class="sep"></span>
+                        <span>4+ years experience</span>
                     </div>
                 </div>
-                
-                <div class="hero-image">
-                    <img src="./assets/image/mahimislam.jpg" alt="Aminul Islam Mahim">
-                    <div style="position: absolute; bottom: -16px; right: -16px; background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
-                        <div style="font-size: 14px; color: #6b7280;">Currently at</div>
-                        <div style="font-weight: 700;">LOGIC Software LTD • Backend</div>
+
+                <div class="hero-visual reveal">
+                    <div class="hero-image tilt" data-tilt-max="10">
+                        <div class="hero-ring"></div>
+                        <img src="./assets/image/mahimislam.jpg" alt="Aminul Islam Mahim">
+                        <div class="float-card">
+                            <div class="fc-label">Currently at</div>
+                            <div class="fc-value">LOGIC Software LTD • Backend</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
         </div>
     </section>
 
     <!-- About -->
     <section id="about" class="section container">
-        <div style="max-width: 720px;">
-            <span class="label">ABOUT ME</span>
-            <h2 class="section-header" style="font-size: 44px;">Building reliable systems at scale.</h2>
-            
-            <p style="font-size: 18px; color: #4b5563; margin-top: 24px;">
-                I'm a software engineer with 4+ years of experience designing and building high-performance, scalable systems. 
-                I love working at the intersection of infrastructure, APIs, and clean frontend interfaces.
-            </p>
-            <p style="font-size: 18px; color: #4b5563; margin-top: 16px;">
-                I've worked at early-stage startups and large tech companies including Vercel and Stripe. 
-                My focus is on creating reliable, maintainable, and observable systems.
-            </p>
-            
-            <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
-                <div style="background: white; border: 1px solid #e5e7eb; padding: 10px 20px; border-radius: 9999px; font-size: 14px;">
-                    📍 Dhaka, Bangladesh
+        <div class="about-grid">
+            <div>
+                <span class="label reveal">ABOUT ME</span>
+                <h2 class="section-header reveal">Building reliable systems at scale.</h2>
+                <p class="lead reveal">
+                    I'm a software engineer with 4+ years of experience designing and building high-performance, scalable systems.
+                    I love working at the intersection of infrastructure, APIs, and clean frontend interfaces.
+                </p>
+                <p class="lead reveal">
+                    I've worked at early-stage startups and large tech companies including Vercel and Stripe.
+                    My focus is on creating reliable, maintainable, and observable systems.
+                </p>
+                <div class="chips reveal">
+                    <div class="chip">📍 Dhaka, Bangladesh</div>
+                    <div class="chip">🎓 Americal International University - Bangladesh, BSc CSE</div>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; padding: 10px 20px; border-radius: 9999px; font-size: 14px;">
-                    🎓 Americal International University - Bangladesh, BSc CSE
-                </div>
+            </div>
+            <div class="stats reveal">
+                <div class="stat tilt"><div class="num" data-count="4" data-suffix="+">0</div><div class="cap">Years experience</div></div>
+                <div class="stat tilt"><div class="num" data-count="47" data-suffix="%">0</div><div class="cap">Faster incident recovery</div></div>
+                <div class="stat tilt"><div class="num" data-count="65" data-suffix="%">0</div><div class="cap">Latency reduction</div></div>
+                <div class="stat tilt"><div class="num" data-count="3" data-suffix="">0</div><div class="cap">Featured projects</div></div>
             </div>
         </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="section" style="background: white; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
-        <div class="container">
-            <span class="label">EXPERIENCE</span>
-            <h2 class="section-header" style="font-size: 44px;">Where I've worked</h2>
-            
-            <div class="experience-item" style="margin-top: 48px;">
-                <div>
-                    <div style="font-weight: 700; font-size: 18px;">Logic Software LTD.</div>
+    <section id="experience" class="section container">
+        <span class="label reveal">EXPERIENCE</span>
+        <h2 class="section-header reveal">Where I've worked</h2>
+
+        <div class="timeline">
+            <div class="experience-item reveal">
+                <div class="exp-side">
+                    <div class="exp-company">Logic Software LTD.</div>
                     <div class="experience-date">May 2026 — Present</div>
                 </div>
-                <div>
+                <div class="exp-body">
                     <div class="experience-role">Junior Software Engineer</div>
                     <div class="experience-company">Backend Development</div>
-                    <ul style="margin-top: 16px; color: #4b5563; line-height: 1.8;">
+                    <ul>
                         <li>ASP.NET</li>
-                        <li>Build Restful API </li>
+                        <li>Build Restful API</li>
                         <li>Follow clean architecture for high efficiency</li>
                         <li>Reduced incident MTTR by 47%</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="experience-item">
-                <div>
-                    <div style="font-weight: 700; font-size: 18px;">Vercel</div>
-                    <div class="experience-date">Mar 2021 — Dec 2022</div>
-                </div>
-                <div>
-                    <div class="experience-role">Software Engineer, Platform</div>
-                    <div class="experience-company">Edge Runtime</div>
-                    <ul style="margin-top: 16px; color: #4b5563; line-height: 1.8;">
-                        <li>Developed Edge Functions V8 runtime</li>
-                        <li>Shipped Analytics v3 dashboard</li>
-                    </ul>
-                </div>
-            </div>
-            
         </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="section container">
-        <span class="label">SELECTED WORK</span>
-        <h2 class="section-header" style="font-size: 44px;">Featured projects</h2>
-        
-        <div class="projects-grid" style="margin-top: 40px;">
-            <!-- Project 1 -->
-            <div class="project-card">
+        <div class="section-head-row">
+            <div>
+                <span class="label reveal">SELECTED WORK</span>
+                <h2 class="section-header reveal">Featured projects</h2>
+            </div>
+            <a href="https://github.com/Aminulislammahim23" class="view-all reveal" target="_blank" rel="noopener">View all projects <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card tilt reveal">
                 <div class="project-header">
-                    <div style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 12px;">⚙️</div>
-                        <div style="font-size: 22px; font-weight: 700;">TechKhor</div>
-                    </div>
+                    <img class="ph-cover" src="./assets/image/code_icon.png" alt="TechKhor preview">
+                    <a href="https://github.com/Aminulislammahim23/TechKhor" class="repo-link" target="_blank" rel="noopener" aria-label="TechKhor on GitHub" title="View on GitHub"><img src="./assets/image/GitHub_Invertocat_Black.svg" alt=""></a>
                 </div>
                 <div class="project-content">
+                    <h3 class="ph-title">TechKhor</h3>
                     <p>Rebuilt Stripe's core payment processing engine in Go with gRPC. Reduced latency by 65%.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Go</span>
-                        <span class="tech-tag">gRPC</span>
-                        <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
+                    <a href="https://github.com/Aminulislammahim23/TechKhor" class="project-log" target="_blank" rel="noopener">Full project log <span aria-hidden="true">&rarr;</span></a>
+                    <div class="tech-line">Go, gRPC, Kubernetes, PostgreSQL</div>
                 </div>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-header green">
-                    <div style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 12px;">🌐</div>
-                        <div style="font-size: 22px; font-weight: 700;">Xtreme Moto</div>
-                    </div>
+
+            <div class="project-card tilt reveal">
+                <div class="project-header">
+                    <img class="ph-cover" src="./assets/image/code_icon.png" alt="Xtreme Moto preview">
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="repo-link" target="_blank" rel="noopener" aria-label="Xtreme Moto on GitHub" title="View on GitHub"><img src="./assets/image/GitHub_Invertocat_Black.svg" alt=""></a>
                 </div>
                 <div class="project-content">
+                    <h3 class="ph-title">Xtreme Moto</h3>
                     <p>Designed and shipped the V8-based edge runtime powering Vercel's Edge Functions.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Rust</span>
-                        <span class="tech-tag">WebAssembly</span>
-                        <span class="tech-tag">V8</span>
-                    </div>
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="project-log" target="_blank" rel="noopener">Full project log <span aria-hidden="true">&rarr;</span></a>
+                    <div class="tech-line">Rust, WebAssembly, V8</div>
+                </div>
+            </div>
+
+            <div class="project-card tilt reveal">
+                <div class="project-header">
+                    <img class="ph-cover" src="./assets/image/code_icon.png" alt="CodeCraft preview">
+                    <a href="https://github.com/Aminulislammahim23/CodeCraft" class="repo-link" target="_blank" rel="noopener" aria-label="CodeCraft on GitHub" title="View on GitHub"><img src="./assets/image/GitHub_Invertocat_Black.svg" alt=""></a>
+                </div>
+                <div class="project-content">
+                    <h3 class="ph-title">CodeCraft</h3>
+                    <p>Built a company-wide observability platform using OpenTelemetry and ClickHouse.</p>
+                    <a href="https://github.com/Aminulislammahim23/CodeCraft" class="project-log" target="_blank" rel="noopener">Full project log <span aria-hidden="true">&rarr;</span></a>
+                    <div class="tech-line">HTML, CSS, JavaScript, PHP</div>
+                </div>
+            </div>
+
+            <div class="project-card tilt reveal">
+                <div class="project-header">
+                    <img class="ph-cover" src="./assets/image/code_icon.png" alt="Xtreme Moto preview">
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="repo-link" target="_blank" rel="noopener" aria-label="Xtreme Moto on GitHub" title="View on GitHub"><img src="./assets/image/GitHub_Invertocat_Black.svg" alt=""></a>
+                </div>
+                <div class="project-content">
+                    <h3 class="ph-title">Xtreme Moto</h3>
+                    <p>Designed and shipped the V8-based edge runtime powering Vercel's Edge Functions.</p>
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="project-log" target="_blank" rel="noopener">Full project log <span aria-hidden="true">&rarr;</span></a>
+                    <div class="tech-line">Rust, WebAssembly, V8</div>
+                </div>
+            </div>
+
+            <div class="project-card tilt reveal">
+                <div class="project-header">
+                    <img class="ph-cover" src="./assets/image/code_icon.png" alt="Xtreme Moto preview">
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="repo-link" target="_blank" rel="noopener" aria-label="Xtreme Moto on GitHub" title="View on GitHub"><img src="./assets/image/GitHub_Invertocat_Black.svg" alt=""></a>
+                </div>
+                <div class="project-content">
+                    <h3 class="ph-title">Xtreme Moto</h3>
+                    <p>Designed and shipped the V8-based edge runtime powering Vercel's Edge Functions.</p>
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="project-log" target="_blank" rel="noopener">Full project log <span aria-hidden="true">&rarr;</span></a>
+                    <div class="tech-line">Rust, WebAssembly, V8</div>
+                </div>
+            </div>
+
+            <div class="project-card tilt reveal">
+                <div class="project-header">
+                    <img class="ph-cover" src="./assets/image/code_icon.png" alt="Xtreme Moto preview">
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="repo-link" target="_blank" rel="noopener" aria-label="Xtreme Moto on GitHub" title="View on GitHub"><img src="./assets/image/GitHub_Invertocat_Black.svg" alt=""></a>
+                </div>
+                <div class="project-content">
+                    <h3 class="ph-title">Xtreme Moto</h3>
+                    <p>Designed and shipped the V8-based edge runtime powering Vercel's Edge Functions.</p>
+                    <a href="https://github.com/Aminulislammahim23/XtremeMotoShop" class="project-log" target="_blank" rel="noopener">Full project log <span aria-hidden="true">&rarr;</span></a>
+                    <div class="tech-line">Rust, WebAssembly, V8</div>
                 </div>
             </div>
             
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-header orange">
-                    <div style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 12px;">📊</div>
-                        <div style="font-size: 22px; font-weight: 700;">CodeCraft</div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <p>Built a company-wide observability platform using OpenTelemetry and ClickHouse.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">PHP</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="section container">
-        <span class="label">TECHNICAL SKILLS</span>
-        <h2 class="section-header" style="font-size: 44px;">What I work with</h2>
-        
-        <div class="skills-grid" style="margin-top: 48px;">
-            <div class="skill-card">
+        <span class="label reveal">TECHNICAL SKILLS</span>
+        <h2 class="section-header reveal">What I work with</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card tilt reveal">
                 <h4>🧠 Languages</h4>
                 <div class="skill-list">
                     <span class="skill-item">C/C++</span>
@@ -238,8 +250,8 @@
                     <span class="skill-item">JavaScript</span>
                 </div>
             </div>
-            
-            <div class="skill-card">
+
+            <div class="skill-card tilt reveal">
                 <h4>🛠️ Frameworks &amp; Tools</h4>
                 <div class="skill-list">
                     <span class="skill-item">Next.js</span>
@@ -251,8 +263,8 @@
                     <span class="skill-item">XAMPP</span>
                 </div>
             </div>
-            
-            <div class="skill-card">
+
+            <div class="skill-card tilt reveal">
                 <h4>☁️ Infrastructure</h4>
                 <div class="skill-list">
                     <span class="skill-item">PostgreSQL</span>
@@ -262,35 +274,31 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section container contact-section">
-        <span class="label">LET'S CONNECT</span>
-        <h2 class="section-header" style="font-size: 44px; display: inline-block;">Ready to build together?</h2>
-        
-        <p style="max-width: 520px; margin: 20px auto; font-size: 18px; color: #4b5563;">
-            I'm always open to new opportunities, interesting problems, and great conversations.
-        </p>
-        
-        <button onclick="showContactModal()" class="btn btn-primary" style="margin-top: 32px; padding: 16px 42px; font-size: 17px;">
-            Send a message
-        </button>
-        
-        <div style="margin-top: 32px; color: #6b7280;">
-            Or email me at <a href="mailto:aminulislammahim2013@gmail.com" style="color: #374151; font-weight: 600;">aminulislammahim2013@gmail.com</a>
+    <section id="contact" class="section container">
+        <div class="contact-section reveal">
+            <span class="label">LET'S CONNECT</span>
+            <h2 class="section-header">Ready to build together?</h2>
+            <p>I'm always open to new opportunities, interesting problems, and great conversations.</p>
+            <button onclick="showContactModal()" class="btn btn-primary btn-lg">Send a message</button>
+            <div class="contact-mail">
+                Or email me at <a href="mailto:aminulislammahim2013@gmail.com" target="_blank" rel="noopener noreferrer">aminulislammahim2013@gmail.com</a>
+            </div>
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
-    <footer style="border-top: 1px solid #e5e7eb; padding: 40px 0; text-align: center; color: #6b7280; font-size: 14px;">
+    <footer>
         <div class="container">
-            © 2026 Aminul Islam Mahim. All rights reserved.
-            <div style="margin-top: 12px; display: flex; justify-content: center; gap: 24px;">
-                <a href="https://github.com/Aminulislammahim23" style="color: #6b7280; text-decoration: none;">GitHub</a>
-                <a href="https://www.linkedin.com/in/aminul-islam-mahim23/" style="color: #6b7280; text-decoration: none;">LinkedIn</a>
-                <a href="https://x.com/mahimislam512" style="color: #6b7280; text-decoration: none;">Twitter</a>
+            <div>© 2026 Aminul Islam Mahim. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="https://github.com/Aminulislammahim23" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/aminul-islam-mahim23/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://x.com/mahimislam512" target="_blank" rel="noopener noreferrer">Twitter</a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

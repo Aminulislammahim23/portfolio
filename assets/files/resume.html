@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aminul Islam Mahim • Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #eef0f7;
+            --paper: #ffffff;
+            --ink: #1a1d2e;
+            --muted: #5d6279;
+            --line: #e3e6f0;
+            --accent: #5b5bf0;
+            --accent-2: #a855f7;
+            --side: #12142a;
+            --side-ink: #e6e8f6;
+            --side-muted: #9ba1c2;
+            --grad: linear-gradient(135deg, #6366f1, #a855f7 55%, #22d3ee);
+            --font-body: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+            --font-head: "Space Grotesk", "Inter", sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--bg);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+
+        /* Toolbar */
+        .toolbar {
+            max-width: 960px; margin: 0 auto;
+            padding: 20px 16px 0;
+            display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 999px;
+            font: 600 14px var(--font-body);
+            cursor: pointer; border: 1px solid var(--line);
+            background: var(--paper); color: var(--ink);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(91, 91, 240, 0.2); }
+        .btn-primary { background: var(--grad); color: #fff; border-color: transparent; }
+
+        /* Page */
+        .page {
+            max-width: 960px;
+            margin: 20px auto 40px;
+            background: var(--paper);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(26, 29, 46, 0.18);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* Sidebar */
+        .side {
+            background: var(--side);
+            color: var(--side-ink);
+            padding: 36px 28px;
+            position: relative;
+        }
+        .side::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: var(--grad);
+        }
+
+        .photo {
+            width: 148px; height: 148px;
+            margin: 6px auto 22px;
+            border-radius: 50%;
+            padding: 4px;
+            background: var(--grad);
+        }
+        .photo img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top;
+            border-radius: 50%;
+            border: 4px solid var(--side);
+            display: block;
+        }
+
+        .side h2 {
+            font: 700 12px var(--font-head);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8b93ff;
+            margin: 28px 0 12px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .side h2::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.12); }
+        .side h2:first-of-type { margin-top: 0; }
+
+        .contact li { display: flex; gap: 10px; margin-bottom: 10px; font-size: 13px; word-break: break-word; }
+        .contact .ic { flex: none; width: 18px; color: #8b93ff; text-align: center; }
+        .contact a:hover { color: #fff; text-decoration: underline; }
+
+        .skill-group { margin-bottom: 16px; }
+        .skill-group h3 { font-size: 12.5px; font-weight: 600; color: var(--side-muted); margin-bottom: 7px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tags span {
+            font-size: 11.5px; padding: 3px 10px;
+            border-radius: 999px;
+            background: rgba(139, 147, 255, 0.14);
+            border: 1px solid rgba(139, 147, 255, 0.3);
+            color: #d3d7ff;
+        }
+
+        .lang li { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; }
+        .lang li span { color: var(--side-muted); }
+
+        /* Main */
+        .main { padding: 40px 40px 36px; }
+
+        .name {
+            font: 700 40px/1.05 var(--font-head);
+            letter-spacing: -0.02em;
+        }
+        .name span {
+            background: var(--grad);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .title { margin-top: 8px; font: 500 17px var(--font-head); color: var(--muted); }
+
+        .main h2 {
+            font: 700 15px var(--font-head);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 30px 0 14px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .main h2::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, var(--line), transparent); }
+
+        .summary { color: var(--muted); margin-top: 22px; }
+
+        /* Timeline */
+        .item { position: relative; padding-left: 22px; margin-bottom: 20px; }
+        .item::before {
+            content: ""; position: absolute; left: 0; top: 7px;
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--paper); border: 3px solid var(--accent);
+        }
+        .item::after {
+            content: ""; position: absolute; left: 4px; top: 22px; bottom: -22px;
+            width: 2px; background: var(--line);
+        }
+        .item:last-child::after { display: none; }
+
+        .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+        .item-title { font: 600 16px var(--font-head); }
+        .item-date {
+            font-size: 12px; font-weight: 600; color: var(--accent);
+            background: rgba(91, 91, 240, 0.09);
+            padding: 2px 10px; border-radius: 999px; white-space: nowrap;
+        }
+        .item-sub { color: var(--muted); font-size: 13px; font-style: italic; margin-bottom: 6px; }
+
+        .bullets li { position: relative; padding-left: 16px; margin-bottom: 4px; color: #3a3e55; }
+        .bullets li::before { content: "▹"; position: absolute; left: 0; color: var(--accent-2); }
+
+        .tech { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
+        .tech b { color: var(--ink); font-weight: 600; }
+
+        .proj-grid { display: grid; gap: 14px; }
+        .proj {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 14px 18px;
+            background: linear-gradient(180deg, #fafaff, #fff);
+            break-inside: avoid;
+        }
+        .proj h3 { font: 600 15.5px var(--font-head); }
+        .proj h3 small { font: 500 12.5px var(--font-body); color: var(--muted); }
+
+        .item, .proj { break-inside: avoid; }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .page { grid-template-columns: 1fr; margin: 16px 12px 32px; }
+            .side { padding: 32px 24px; }
+            .main { padding: 28px 24px; }
+            .name { font-size: 32px; }
+            .photo { width: 128px; height: 128px; }
+        }
+
+        /* Print */
+        @page { size: A4; margin: 0; }
+        @media print {
+            body { background: #fff; font-size: 12px; }
+            .toolbar { display: none; }
+            .page { margin: 0; max-width: none; border-radius: 0; box-shadow: none; grid-template-columns: 250px 1fr; }
+            .side { padding: 28px 22px; }
+            .main { padding: 30px 30px 24px; }
+            .name { font-size: 34px; }
+            .photo { width: 120px; height: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="../../index.html" class="btn">&larr; Back to portfolio</a>
+        <button class="btn btn-primary" onclick="window.print()">Download / Print PDF</button>
+    </div>
+
+    <div class="page">
+        <aside class="side">
+            <div class="photo"><img src="../image/mahimislam.jpg" alt="Aminul Islam Mahim"></div>
+
+            <h2>Contact</h2>
+            <ul class="contact">
+                <li><span class="ic">📍</span><span>F/63 Mohakhali, Dhaka – 1213, Bangladesh</span></li>
+                <li><span class="ic">📞</span><a href="tel:+8801629942052">+88 01629942052</a></li>
+                <li><span class="ic">✉️</span><a href="mailto:aminulislammahim2013@gmail.com">aminulislammahim2013@gmail.com</a></li>
+                <li><span class="ic">🌐</span><a href="https://aminulislammahim23.github.io/portfolio/" target="_blank" rel="noopener">aminulislammahim23.github.io/portfolio</a></li>
+            </ul>
+
+            <h2>Skills</h2>
+            <div class="skill-group">
+                <h3>Programming Languages</h3>
+                <div class="tags"><span>C++</span><span>C#</span><span>Python</span><span>C</span><span>JavaScript</span><span>TypeScript</span><span>Kotlin</span><span>Java</span><span>PHP</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Backend</h3>
+                <div class="tags"><span>ASP.NET</span><span>ASP.NET Core</span><span>Nest.js</span><span>RESTful APIs</span><span>SSMS</span><span>MySQL</span><span>Firebase</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Frontend</h3>
+                <div class="tags"><span>Next.js</span><span>Angular</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>XML</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Tools &amp; Platforms</h3>
+                <div class="tags"><span>Git</span><span>GitHub</span><span>Linux (Arch)</span><span>Arduino</span><span>Raspberry Pi</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Development Concepts</h3>
+                <div class="tags"><span>CRUD</span><span>Backend Architecture</span><span>API Design</span><span>N-tier</span><span>Agile (Scrum, XP)</span><span>MVVM</span></div>
+            </div>
+
+            <h2>Languages</h2>
+            <ul class="lang">
+                <li>English <span>Professional</span></li>
+                <li>Bengali <span>Native</span></li>
+                <li>Hindi <span>Intermediate</span></li>
+            </ul>
+        </aside>
+
+        <main class="main">
+            <h1 class="name">Aminul Islam <span>Mahim</span></h1>
+            <p class="title">Software Engineer &middot; CSE Undergraduate</p>
+
+            <h2>Career Summary</h2>
+            <p class="summary" style="margin-top:0">
+                Results-driven Computer Science &amp; Engineering undergraduate at American International University–Bangladesh with hands-on experience in software development and system analysis. Adept at designing and building user-centric applications with a strong emphasis on clean code and scalable system architecture. Proven ability to thrive in collaborative, agile team environments while adapting efficiently to evolving technologies and development workflows. Passionate about delivering real-world software solutions and committed to continuous growth in both technical expertise and professional competencies.
+            </p>
+
+            <h2>Work Experience</h2>
+            <div class="item">
+                <div class="item-head">
+                    <div class="item-title">Software Engineer Intern</div>
+                    <div class="item-date">May 2026 – Present</div>
+                </div>
+                <div class="item-sub">Logic Software Ltd, Block-C, House No. 64, Rd No-15, Dhaka 1213</div>
+                <ul class="bullets">
+                    <li>Developed and maintained enterprise-level ERP modules for RMG and Textile business operations.</li>
+                    <li>Worked with C#, .NET, SQL Server, REST APIs and related development tools.</li>
+                    <li>Implemented business logic, database operations, and application features based on functional requirements.</li>
+                    <li>Debugged and resolved software defects while improving application reliability and performance.</li>
+                    <li>Collaborated with senior developers and cross-functional teams throughout the software development lifecycle.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <div class="item-title">Data Analyst (DA)</div>
+                    <div class="item-date">Aug 2023 – 2024</div>
+                </div>
+                <div class="item-sub">Intelligent Image Management Limited, Pragati Sarani, Dhaka-1212</div>
+                <ul class="bullets">
+                    <li>Collected, cleaned, and analyzed large datasets to extract actionable insights for business decision-making.</li>
+                    <li>Developed interactive dashboards and reports using Power BI / Tableau / Excel to visualize key performance metrics.</li>
+                    <li>Wrote optimized SQL queries to retrieve and manipulate data from relational databases.</li>
+                    <li>Ensured data accuracy, consistency, and integrity through validation and quality checks.</li>
+                </ul>
+            </div>
+
+            <h2>Projects</h2>
+            <div class="proj-grid">
+                <div class="proj">
+                    <h3>Tech-Khor <small>— Gadgets &amp; Accessories Shopping Web App</small></h3>
+                    <p class="tech"><b>Tech:</b> NestJS, Next.js, PostgreSQL, Node.js, Tailwind CSS, 3-Tier Architecture</p>
+                    <ul class="bullets">
+                        <li>Built a full-stack e-commerce app with a NestJS/Node.js backend API and a responsive Next.js + Tailwind CSS frontend.</li>
+                        <li>Designed RESTful APIs for product management, user operations, and order processing on PostgreSQL.</li>
+                        <li>Applied backend validation, authentication, and clean architecture for scalability and maintainability.</li>
+                    </ul>
+                </div>
+                <div class="proj">
+                    <h3>CafeShop Management System <small>— Desktop Application</small></h3>
+                    <p class="tech"><b>Tech:</b> C#, ASP.NET WF, SQL Server, SSMS</p>
+                    <ul class="bullets">
+                        <li>Role-based system: managers handle staff, services, products, salaries and business data; staff handle inventory, billing and invoices.</li>
+                        <li>Supports multiple payment methods and generates detailed invoices with VAT, discounts, and transaction records.</li>
+                    </ul>
+                </div>
+                <div class="proj">
+                    <h3>Xtreme Moto <small>— Moto Service Booking Mobile App</small></h3>
+                    <p class="tech"><b>Tech:</b> Kotlin, XML, Firebase, Android Studio, OpenStreetMap API</p>
+                    <ul class="bullets">
+                        <li>Android app to discover nearby service centres, book appointments, and manage reservations.</li>
+                        <li>Integrated OpenStreetMap for location services and Firebase for real-time booking and user management.</li>
+                    </ul>
+                </div>
+                <div class="proj">
+                    <h3>Face Recognition Attendance System <small>— Adamjee Cantonment</small></h3>
+                    <p class="tech"><b>Tech:</b> Python, Raspberry Pi 4, Arduino, MongoDB, Pi Camera, LBPH Model, GUI</p>
+                    <ul class="bullets">
+                        <li>Real-time automated attendance on Raspberry Pi 4 using a Pi Camera and the LBPH recognition model.</li>
+                        <li>Stores attendance records in MongoDB, with Arduino hardware control and a GUI for live monitoring.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-head">
+                    <div class="item-title">BSc in Computer Science and Engineering (CSE)</div>
+                    <div class="item-date">2022 – Present</div>
+                </div>
+                <div class="item-sub">American International University – Bangladesh</div>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <div class="item-title">Higher Secondary Certificate (HSC)</div>
+                    <div class="item-date">2018 – 2020</div>
+                </div>
+                <div class="item-sub">Ideal School, Dhanmondi</div>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <div class="item-title">Secondary School Certificate (SSC)</div>
+                    <div class="item-date">2017 – 2018</div>
+                </div>
+                <div class="item-sub">Banani Bidyaniketan School &amp; College</div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
